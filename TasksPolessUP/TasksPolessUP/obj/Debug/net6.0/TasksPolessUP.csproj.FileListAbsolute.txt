@@ -1,0 +1,15 @@
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\bin\Debug\net6.0\TasksPolessUP.exe
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\bin\Debug\net6.0\TasksPolessUP.deps.json
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\bin\Debug\net6.0\TasksPolessUP.runtimeconfig.json
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\bin\Debug\net6.0\TasksPolessUP.dll
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\bin\Debug\net6.0\TasksPolessUP.pdb
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\obj\Debug\net6.0\TasksPolessUP.csproj.AssemblyReference.cache
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\obj\Debug\net6.0\TasksPolessUP.GeneratedMSBuildEditorConfig.editorconfig
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\obj\Debug\net6.0\TasksPolessUP.AssemblyInfoInputs.cache
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\obj\Debug\net6.0\TasksPolessUP.AssemblyInfo.cs
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\obj\Debug\net6.0\TasksPolessUP.csproj.CoreCompileInputs.cache
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\obj\Debug\net6.0\TasksPolessUP.dll
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\obj\Debug\net6.0\refint\TasksPolessUP.dll
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\obj\Debug\net6.0\TasksPolessUP.pdb
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\obj\Debug\net6.0\TasksPolessUP.genruntimeconfig.cache
+D:\giit\Tasks-C-PolessUP\TasksPolessUP\TasksPolessUP\obj\Debug\net6.0\ref\TasksPolessUP.dll
