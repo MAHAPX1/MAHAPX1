@@ -1,24 +1,21 @@
-﻿// Второе задание C#
+﻿
+// Третье задание C#
 
-// Ввод: nums = [2, 7, 11, 15], target = 9
-// Вывод: [0,1]
-// Объяснение: Поскольку nums[0] +nums[1] == 9, мы возвращаем[0, 1].
+// Ввод: числа = [1,3,5,6], цель = 5
+// Вывод: 2
 
-int[] nums = { 15, 7, 11, 2, 15, 2 };
-int target = 30;
-string str = "Няма такого";
+int[] nums = { 1, 3, 4, 7, 10, 20 };
+int target = 10;
 
-for (int i = 0; i < nums.Length; i++)
-{
-    for (int j = 1 + i; j < nums.Length; j++)
+if (target >= nums[^1]) Console.WriteLine(nums.Length);
+else 
+    for (int i = 0; i < nums.Length; i++)
     {
-        if (nums[i] + nums[j] == target)
+        if (nums[i] >= target && target <= nums[i] )
         {
-            str = i + " И " + j;
+            Console.WriteLine(i);
             break;
         }
     }
-}
 
-Console.WriteLine(str);
 Console.ReadKey();
