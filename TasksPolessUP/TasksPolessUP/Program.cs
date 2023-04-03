@@ -1,10 +1,8 @@
-﻿// Шестое задание C#
+﻿// Восьмое задание C#
 
 /* Реализуйте метод
-Ввод: 2.345
-Вывод: Two point three four five
-Ввод: -23.809
-Вывод: Minus two three point eight zero nine
+Ввод:(255,255,255)
+Вывод: "FFFFFF"
 */
 
 namespace TasksPolessUP
@@ -13,59 +11,47 @@ namespace TasksPolessUP
     {
         static void Main(string[] args)
         {
-            double real = 220.345;
-            Word(real);
+            string rgb = "10,78,2595"; // Несколько тестовых вариантов ввода строки
+           // string rgb = "10,678,-9";
+           // string rgb = "10 678,90";
+            // string rgb = "10,90 ";
+            Console.WriteLine(RGB(rgb));
             Console.ReadKey();
         }
 
-
-        static string[] Word(double number)
+        static string RGB(string rgb)
         {
+            rgb += ",";
+            string res = string.Empty;
+            string strnumber = string.Empty;
+            int number;
 
-            string words = number.ToString();
-            string[] result = new string[words.Length];
-            for (int i = 0; i < words.Length; i++)
+            for (int i = 0; i < rgb.Length; i++)
             {
-                switch (words[i])
+                if (char.IsDigit(rgb[i]))
                 {
-                    case '1':
-                        result[i] = " One";
-                        break;
-                    case '2':
-                        result[i] = " Two";
-                        break;
-                    case '3':
-                        result[i] = " Three";
-                        break;
-                    case '4':
-                        result[i] = " Four";
-                        break;
-                    case '5':
-                        result[i] = " Five";
-                        break;
-                    case '6':
-                        result[i] = " Six";
-                        break;
-                    case '7':
-                        result[i] = " Seven";
-                        break;
-                    case '8':
-                        result[i] = " Eight";
-                        break;
-                    case '9':
-                        result[i] = " Nine";
-                        break;
-                    case '0':
-                        result[i] = " Zero";
-                        break;
-                    default:
-                        result[i] = " Point";
-                        break;
+                    strnumber += rgb[i];
                 }
-                
+                else if (rgb[i] == ',')
+                {            
+                    try
+                    {
+                        number = Convert.ToInt32(strnumber);
+                        res += number > 255 ? "ff," : Convert.ToString(number, 16) + ',';
+                    }
+                    catch
+                    {
+                        return "Исходная строка ведена неверно";
+                    }
+                    strnumber = string.Empty;                   
+                }
+                else return "Исходная строка ведена неверно";
+
             }
-            return result;
+
+            return res[..^1];
         }
-}}
+    }
+}
     
 
