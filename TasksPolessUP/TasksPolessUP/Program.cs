@@ -1,25 +1,71 @@
-﻿// Пятое задание C#
+﻿// Шестое задание C#
 
-/* Реализуйте алгоритм, который находит элемент с максимальным значением. Не используйте LINQ. 
-Ввод: nums = [2, 3, 1]
-Вывод: 1
-Объяснение: Поскольку 3 является максимальным числом, то выводим его индекс.
+/* Реализуйте метод
+Ввод: 2.345
+Вывод: Two point three four five
+Ввод: -23.809
+Вывод: Minus two three point eight zero nine
 */
-int[] nums = { 10, 8, 70, int.MaxValue, 9, 11};
 
-int max = int.MinValue;
-int index = 0;
-for (int i = 0; i < nums.Length; i++)
+namespace TasksPolessUP
 {
-        if (nums[i] > max)
+    class Program
+    {
+        static void Main(string[] args)
         {
-           max = nums[i];
-           index = i;                          
+            double real = 220.345;
+            Word(real);
+            Console.ReadKey();
         }
-}
-
-Console.WriteLine(index);
 
 
-Console.ReadKey();
+        static string[] Word(double number)
+        {
+
+            string words = number.ToString();
+            string[] result = new string[words.Length];
+            for (int i = 0; i < words.Length; i++)
+            {
+                switch (words[i])
+                {
+                    case '1':
+                        result[i] = " One";
+                        break;
+                    case '2':
+                        result[i] = " Two";
+                        break;
+                    case '3':
+                        result[i] = " Three";
+                        break;
+                    case '4':
+                        result[i] = " Four";
+                        break;
+                    case '5':
+                        result[i] = " Five";
+                        break;
+                    case '6':
+                        result[i] = " Six";
+                        break;
+                    case '7':
+                        result[i] = " Seven";
+                        break;
+                    case '8':
+                        result[i] = " Eight";
+                        break;
+                    case '9':
+                        result[i] = " Nine";
+                        break;
+                    case '0':
+                        result[i] = " Zero";
+                        break;
+                    default:
+                        result[i] = " Point";
+                        break;
+                }
+                
+            }
+            return result;
+        }
+}}
+    
 
