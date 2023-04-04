@@ -1,10 +1,7 @@
-﻿// Десятое задание C#
+﻿// Одиннадцатое задание C#
 
-/* Реализуйте метод, который вычисляет сумму первых n элементов последовательности
-Пример:
-1     2        3          4            5
-a + (a+r) + (a+r+r) + (a+r+r+r) + (a+r+r+r+r) 
-2 + (2+3) + (2+3+3) + (2+3+3+3) + (2+3+3+3+3) = 40
+/* Реализовать метод, который сортирует массив по возрастанию элементов.
+
 */
 
 namespace TasksPolessUP
@@ -13,24 +10,28 @@ namespace TasksPolessUP
     {
         static void Main(string[] args)
         {
-            int a = 2;
-          
-            int r = 3;
-            int n = 5;
-            Console.WriteLine(Sumn(ref a, ref r, n));
+            int[] arr = {4,5,2,5,3,1,-10};
+            Sort(arr);
 
             Console.ReadKey();
         }
 
-        static int Sumn(ref int a, ref int r, int n)
+        static int[] Sort(int[] arr)
         {
-
-            int sum = n <= 0 ? 0: a;
-            for (int i = 1; i < n; i++)
+            int temp;
+            for (int i = 0; i < arr.Length; i++)
             {
-                sum += a + i * r;
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
             }
-            return sum;
+            return arr;
         }
     }
 }
