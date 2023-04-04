@@ -1,10 +1,10 @@
-﻿// Девять задание C#
+﻿// Десятое задание C#
 
-/* Реализуйте метод
-Ввод: 2000
-Вывод: true
-Ввод: 2015
-Вывод: false
+/* Реализуйте метод, который вычисляет сумму первых n элементов последовательности
+Пример:
+1     2        3          4            5
+a + (a+r) + (a+r+r) + (a+r+r+r) + (a+r+r+r+r) 
+2 + (2+3) + (2+3+3) + (2+3+3+3) + (2+3+3+3+3) = 40
 */
 
 namespace TasksPolessUP
@@ -13,22 +13,24 @@ namespace TasksPolessUP
     {
         static void Main(string[] args)
         {
-            int year = 2015;
-            Console.WriteLine(Visokos(year));
+            int a = 2;
+          
+            int r = 3;
+            int n = 5;
+            Console.WriteLine(Sumn(ref a, ref r, n));
 
             Console.ReadKey();
         }
 
-        static bool Visokos(int year)
+        static int Sumn(ref int a, ref int r, int n)
         {
-            if (year % 4 == 0)
+
+            int sum = n <= 0 ? 0: a;
+            for (int i = 1; i < n; i++)
             {
-                return true;
+                sum += a + i * r;
             }
-            else
-            {
-                return false;
-            }
+            return sum;
         }
     }
 }
