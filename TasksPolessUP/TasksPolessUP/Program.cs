@@ -1,8 +1,9 @@
 ﻿
-// Двенадцатое задание C#
-/* Реализовать метод ISBN-10.
-   3-598-21508-8 true;
-   3-598-21508-9 false;
+// Триннадцатое задание C#
+/* 
+   Если номер версии не указывает ревизию в индексе, то обрабатывайте ревизию как 0.
+   Например, версия  1.0меньше, чем версия, 1.1 потому что их ревизии 0 одинаковы,
+   но их ревизии 1 равны  0 и  1 соответственно, и 0 < 1.
 */
 
 namespace TasksPolessUP
@@ -11,33 +12,45 @@ namespace TasksPolessUP
     {
         static void Main(string[] args)
         {
-            string str = "0-553-41802-5";
-
-            Console.WriteLine(ISBN(str));
+            string version1 = "001.5";
+            string version2 = "1.5.1";
+            Console.WriteLine(ComparisonVersions(version1, version2));
+            
             Console.ReadKey();
         }
-
-        static bool ISBN(string str)
+        static int ComparisonVersions(string v1, string v2)
         {
-            int checkSum = 0;
-            int num = 10;
-            for (int i = 0; i < str.Length; i++)
+            v1 = v1.Trim('0');
+            v2 = v2.Trim('0');
+            if (String.Compare(v2, v1) == 0) return 0; // Версии одинаковы
+            if(v1.IndexOf('.') <= -1 || v2.IndexOf('.') <= -1) return 0; // Версии не имеют точек
+            int i = -1;
+            do
             {
-                if (str[i] == 'X') checkSum += 10;
-                if (char.IsNumber(str[i]))
+                i++;
+                try
                 {
-                    checkSum +=(int)str[i] * num;
-                    --num;
+                    if ((int)v1[i] > (int)v2[i])
+                    {
+                        return 1;
+                    }
                 }
-                
+                catch (Exception)
+                {
+                    if (v1.Length > v2.Length)
+                    {
+                        return 1;
+                    }
+                    else return -1;                  
+                }
+                 
             }
-
-            if (checkSum % 11 == 0)
-            {
-                return true;
-            }
-            else return false;
+            while (v1[i]== v2[i]);
+            
+            return -1;
         }
+
+
     }
 }
     
