@@ -1,7 +1,8 @@
-﻿// Одиннадцатое задание C#
-
-/* Реализовать метод, который сортирует массив по возрастанию элементов.
-
+﻿
+// Двенадцатое задание C#
+/* Реализовать метод ISBN-10.
+   3-598-21508-8 true;
+   3-598-21508-9 false;
 */
 
 namespace TasksPolessUP
@@ -10,28 +11,32 @@ namespace TasksPolessUP
     {
         static void Main(string[] args)
         {
-            int[] arr = {4,5,2,5,3,1,-10};
-            Sort(arr);
+            string str = "0-553-41802-5";
 
+            Console.WriteLine(ISBN(str));
             Console.ReadKey();
         }
 
-        static int[] Sort(int[] arr)
+        static bool ISBN(string str)
         {
-            int temp;
-            for (int i = 0; i < arr.Length; i++)
+            int checkSum = 0;
+            int num = 10;
+            for (int i = 0; i < str.Length; i++)
             {
-                for (int j = i + 1; j < arr.Length; j++)
+                if (str[i] == 'X') checkSum += 10;
+                if (char.IsNumber(str[i]))
                 {
-                    if (arr[i] > arr[j])
-                    {
-                        temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
-                    }
+                    checkSum +=(int)str[i] * num;
+                    --num;
                 }
+                
             }
-            return arr;
+
+            if (checkSum % 11 == 0)
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }
