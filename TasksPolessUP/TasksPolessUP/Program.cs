@@ -1,9 +1,10 @@
 ﻿
-// Триннадцатое задание C#
+// 15 задание C#
 /* 
-   Если номер версии не указывает ревизию в индексе, то обрабатывайте ревизию как 0.
-   Например, версия  1.0меньше, чем версия, 1.1 потому что их ревизии 0 одинаковы,
-   но их ревизии 1 равны  0 и  1 соответственно, и 0 < 1.
+   Красота строки заключается в разнице частот между наиболее часто встречающимися и наименее часто встречающимися символами
+   Например, "abaacc" красота 3 - 1 = 2.
+   Ввод: s = "aabcb"
+   Выход: 1
 */
 
 namespace TasksPolessUP
@@ -12,42 +13,32 @@ namespace TasksPolessUP
     {
         static void Main(string[] args)
         {
-            string version1 = "001.5";
-            string version2 = "1.5.1";
-            Console.WriteLine(ComparisonVersions(version1, version2));
+            string str = "aabcb";           
+            Console.WriteLine(BeautyLine(str));
             
             Console.ReadKey();
         }
-        static int ComparisonVersions(string v1, string v2)
+        static int BeautyLine(string str)
         {
-            v1 = v1.Trim('0');
-            v2 = v2.Trim('0');
-            if (String.Compare(v2, v1) == 0) return 0; // Версии одинаковы
-            if(v1.IndexOf('.') <= -1 || v2.IndexOf('.') <= -1) return 0; // Версии не имеют точек
-            int i = -1;
-            do
+            int count;
+            int max = int.MinValue;
+            int min = int.MaxValue;
+            char temp;
+            for (int i = 0; i < str.Length; i++)
             {
-                i++;
-                try
+                temp = str[i];
+                count = 0;
+                foreach (char ch in str)
                 {
-                    if ((int)v1[i] > (int)v2[i])
+                    if (ch == temp)
                     {
-                        return 1;
+                        count++;
                     }
                 }
-                catch (Exception)
-                {
-                    if (v1.Length > v2.Length)
-                    {
-                        return 1;
-                    }
-                    else return -1;                  
-                }
-                 
+                if(count > max) max = count;
+                if(count < min) min = count;
             }
-            while (v1[i]== v2[i]);
-            
-            return -1;
+            return max - min;
         }
 
 
