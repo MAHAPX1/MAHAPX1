@@ -1,10 +1,9 @@
 ﻿
-// 15 задание C#
+// 16 задание C#
 /* 
-   Красота строки заключается в разнице частот между наиболее часто встречающимися и наименее часто встречающимися символами
-   Например, "abaacc" красота 3 - 1 = 2.
-   Ввод: s = "aabcb"
-   Выход: 1
+   Учитывая целое число n, верните true,
+   если можно представить n как сумму различных степеней трех. 
+   В противном случае возвращайте false.
 */
 
 namespace TasksPolessUP
@@ -13,34 +12,18 @@ namespace TasksPolessUP
     {
         static void Main(string[] args)
         {
-            string str = "aabcb";           
-            Console.WriteLine(BeautyLine(str));
+            int n = 12;
+            if (n % 3 == 0)
+            {
+                Console.WriteLine(true);
+            }
+            else
+            {
+                Console.WriteLine(false);
+            }
             
             Console.ReadKey();
         }
-        static int BeautyLine(string str)
-        {
-            int count;
-            int max = int.MinValue;
-            int min = int.MaxValue;
-            char temp;
-            for (int i = 0; i < str.Length; i++)
-            {
-                temp = str[i];
-                count = 0;
-                foreach (char ch in str)
-                {
-                    if (ch == temp)
-                    {
-                        count++;
-                    }
-                }
-                if(count > max) max = count;
-                if(count < min) min = count;
-            }
-            return max - min;
-        }
-
 
     }
 }
