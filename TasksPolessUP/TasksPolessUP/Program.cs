@@ -1,32 +1,36 @@
 ﻿
-// 19 задание C#
+// 20 задание C#
 /* 
-    Переставьте штрих-коды так, чтобы никакие два соседних штрих-кода не были одинаковыми.
-    Ввод: штрих-коды = [1,1,1,2,2,2]
-    Вывод: [2,1,2,1,2,1]
+    Учитывая целое число n, вернуть количество простых чисел, которые строго меньше, чем n.
+    Вход: n = 10
+    Выход: 4
 */
 
 namespace TasksPolessUP
 {
     class Program
     {
+        static int SimpleCount(int n)
+        {
+            int count = n >= 2 ? 1: 0;
+            bool flag;
+            for (int i = n; i > 2; i--)
+            {
+                flag = false;
+                for (int j = 2; j < i; j++)
+                {
+                 if (i % j == 0) break;
+                 if (j + 1 == i) flag = true;
+                } 
+                if (flag) count++;
+            }
+            return count;
+        }
         static void Main(string[] args)
         {
-            int[] ithbarcodes = new int[] { 1, 2, 1, 1, 2, 2, 2, 2, 1, 2};
-            for (int i = 0; i < ithbarcodes.Length; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    ithbarcodes[i] = ithbarcodes.Max();
-                }
-                else
-                {
-                    ithbarcodes[i] = ithbarcodes.Min();
-                }
-                               
-
-            }
-
+           int n = 10;
+           Console.WriteLine("Количество простых чисел " + SimpleCount(n));
+           Console.ReadKey();
         }
 
     }
